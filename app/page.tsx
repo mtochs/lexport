@@ -59,8 +59,15 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="hero">
-          <div className="container">
+        <section className="hero relative overflow-hidden">
+          {/* Background Effects */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] opacity-50 mix-blend-screen"></div>
+            <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] opacity-30 mix-blend-screen"></div>
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+          </div>
+
+          <div className="container relative z-10">
             <div className="hero-content">
               <span className="hero-tag">New: Autonomous Classification Engine</span>
               <h1>Export Control Compliance.<br />Solved by Agents.</h1>
