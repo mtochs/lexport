@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import HeroDashboard from "./components/HeroDashboard";
+import ProcessWorkflow from "./components/ProcessWorkflow";
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -38,7 +39,12 @@ export default function Home() {
       {/* Header */}
       <header className="header">
         <div className="container header-content">
-          <Link href="/" className="logo">LexPort</Link>
+          <Link href="/" className="logo flex items-center gap-2">
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            LexPort
+          </Link>
           <nav>
             <ul className="nav-links">
               <li><Link href="#features" className="nav-link">Features</Link></li>
@@ -143,35 +149,10 @@ export default function Home() {
               <h2>From CAD to Compliance</h2>
               <p>Seamlessly integrated into your existing engineering workflow.</p>
             </div>
-            <div className="grid" style={{ gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
-              <div>
-                <ol style={{ counterReset: 'step' }}>
-                  <li style={{ marginBottom: '48px', position: 'relative', paddingLeft: '64px' }}>
-                    <span style={{ position: 'absolute', left: 0, top: 0, width: '40px', height: '40px', background: 'var(--plx-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#fff' }}>1</span>
-                    <h3 style={{ color: '#fff' }}>Ingest Data</h3>
-                    <p>LexPort pulls CAD files, BOMs, and material specs directly from Teamcenter or SolidWorks PDM.</p>
-                  </li>
-                  <li style={{ marginBottom: '48px', position: 'relative', paddingLeft: '64px' }}>
-                    <span style={{ position: 'absolute', left: 0, top: 0, width: '40px', height: '40px', background: 'var(--plx-card)', border: '1px solid var(--plx-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: 'var(--plx-primary)' }}>2</span>
-                    <h3 style={{ color: '#fff' }}>Analyze & Classify</h3>
-                    <p>The agent evaluates the technical data against the USML/CCL knowledge graph to find the correct classification.</p>
-                  </li>
-                  <li style={{ position: 'relative', paddingLeft: '64px' }}>
-                    <span style={{ position: 'absolute', left: 0, top: 0, width: '40px', height: '40px', background: 'var(--plx-card)', border: '1px solid var(--plx-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: 'var(--plx-primary)' }}>3</span>
-                    <h3 style={{ color: '#fff' }}>Generate Report</h3>
-                    <p>A complete audit trail is pushed back to the PLM, ready for export approval.</p>
-                  </li>
-                </ol>
-              </div>
-              <div className="hero-visual" style={{ marginTop: 0 }}>
-                <Image
-                  src="/process_diagram.png"
-                  alt="LexPort Process Diagram"
-                  width={600}
-                  height={400}
-                />
-              </div>
-            </div>
+
+            {/* Interactive Workflow Component */}
+            <ProcessWorkflow />
+
           </div>
         </section>
 
