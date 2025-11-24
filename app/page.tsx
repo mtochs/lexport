@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import HeroDashboard from "./components/HeroDashboard";
 import ProcessWorkflow from "./components/ProcessWorkflow";
+import SocialProof from "./components/SocialProof";
+import FAQ from "./components/FAQ";
+import { ShieldCheck } from "lucide-react";
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -82,6 +85,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Social Proof */}
+        <SocialProof />
 
         {/* Problem / Solution */}
         <section className="section">
@@ -188,6 +194,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <FAQ />
+
         {/* CTA */}
         <section id="contact" className="section">
           <div className="container">
@@ -196,7 +205,13 @@ export default function Home() {
               <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '16px auto 32px' }}>
                 Join the Tier-2 and Tier-3 aerospace leaders using LexPort to accelerate their engineering workflows.
               </p>
-              <Link href="mailto:sales@lexport.ai" className="btn" style={{ background: '#fff', color: 'var(--plx-primary)', fontWeight: 600 }}>Contact Sales</Link>
+              <div className="flex flex-col items-center gap-4">
+                <Link href="mailto:sales@lexport.ai" className="btn" style={{ background: '#fff', color: 'var(--plx-primary)', fontWeight: 600 }}>Contact Sales</Link>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>SOC2 Certified • No credit card required</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
