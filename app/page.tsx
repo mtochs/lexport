@@ -1,8 +1,9 @@
 'use client';
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
+import HeroDashboard from "./components/HeroDashboard";
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -63,14 +64,8 @@ export default function Home() {
                 <Link href="#how-it-works" className="btn btn-secondary">How it Works</Link>
               </div>
             </div>
-            <div className="hero-visual">
-              <Image
-                src="/hero_dashboard.png"
-                alt="LexPort Dashboard Interface"
-                width={1200}
-                height={675}
-                priority
-              />
+            <div className="hero-visual" style={{ background: 'transparent', border: 'none', boxShadow: 'none', overflow: 'visible' }}>
+              <HeroDashboard />
             </div>
           </div>
         </section>
